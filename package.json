@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-dynamic-import-split-require",
+  "description": "babel plugin to compile `import()` syntax to `split-require`, the commonjs bundle splitting library",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/babel-plugin-dynamic-import-split-require/issues"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "dedent": "^0.7.0",
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/babel-plugin-dynamic-import-split-require",
+  "keywords": [
+    "babel",
+    "browserify",
+    "bundle",
+    "dynamic",
+    "import",
+    "plugin",
+    "split-require",
+    "splitting"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/babel-plugin-dynamic-import-split-require.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  }
+}
