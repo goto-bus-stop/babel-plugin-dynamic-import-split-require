@@ -3,15 +3,6 @@ module.exports = function (babel) {
     require('split-require')
   `)
 
-  var makeImport = babel.template(`
-    new Promise(function (resolve, reject) {
-      HELPER(PATH, function (err, exports) {
-        if (err) reject(err)
-        else resolve(exports)
-      })
-    })
-  `)
-
   return {
     inherits: require('babel-plugin-syntax-dynamic-import'),
 
@@ -33,10 +24,7 @@ module.exports = function (babel) {
       CallExpression: function (path) {
         if (path.get('callee').isImport()) {
           this.usesImport = true
-          path.replaceWith(makeImport({
-            HELPER: this.helperId,
-            PATH: path.node.arguments[0]
-          }))
+          path.get('callee').replaceWith(this.helperId)
         }
       }
     }

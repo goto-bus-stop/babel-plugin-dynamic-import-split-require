@@ -2,6 +2,9 @@
 
 babel plugin to compile `import()` syntax to `split-require`, the commonjs bundle splitting library
 
+> v2+ of this plugin works with `split-require@3.1.0` and up.
+> Install `babel-plugin-dynamic-import-split-require@1.x` if you are using an older version.
+
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]

@@ -18,11 +18,7 @@ test('transforms import() to a split-require helper', function (t) {
   t.equal(src, dedent`
     var _import = require('split-require');
 
-    new Promise(function (resolve, reject) {
-      _import('./whatever', function (err, exports) {
-        if (err) reject(err);else resolve(exports);
-      });
-    }).then(whatever => {
+    _import('./whatever').then(whatever => {
       console.log(whatever);
     });
   `)
