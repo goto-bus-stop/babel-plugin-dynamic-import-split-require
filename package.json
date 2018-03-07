@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-dynamic-import-split-require",
   "description": "babel plugin to compile `import()` syntax to `split-require`, the commonjs bundle splitting library",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": {
     "url": "https://github.com/goto-bus-stop/babel-plugin-dynamic-import-split-require/issues"
