@@ -45,11 +45,7 @@ import('whatever').then(onwhatever)
 ```js
 var _import = require('split-require');
 
-new Promise(function (resolve, reject) {
-  _import("whatever", function (err, exports) {
-    if (err) reject(err);else resolve(exports);
-  });
-}).then(onwhatever);
+_import("whatever").then(onwhatever);
 ```
 
 This code can be bundled by browserify using the [`split-require`](https://github.com/goto-bus-stop/split-require#readme) plugin.
