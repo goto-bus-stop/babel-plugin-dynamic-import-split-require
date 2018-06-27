@@ -9,7 +9,7 @@ test('transforms import() to a split-require helper', function (t) {
 
   var src = babel.transform(dedent`
     import('./whatever').then((whatever) => {
-      console.log(whatever)
+      console.log(whatever.default)
     })
   `, {
     plugins: [ plugin ]
@@ -18,8 +18,10 @@ test('transforms import() to a split-require helper', function (t) {
   t.equal(src, dedent`
     var _import = require('split-require');
 
-    _import('./whatever').then(whatever => {
-      console.log(whatever);
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    _import('./whatever').then(_interopRequireDefault).then(whatever => {
+      console.log(whatever.default);
     });
   `)
 })

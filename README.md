@@ -45,7 +45,9 @@ import('whatever').then(onwhatever)
 ```js
 var _import = require('split-require');
 
-_import("whatever").then(onwhatever);
+function _interopRequireDefault(obj) { return /* ... */ }
+
+_import("whatever").then(_interopRequireDefault).then(onwhatever);
 ```
 
 This code can be bundled by browserify using the [`split-require`](https://github.com/goto-bus-stop/split-require#readme) plugin.
