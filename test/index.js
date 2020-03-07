@@ -12,7 +12,7 @@ test('transforms import() to a split-require helper', function (t) {
       console.log(whatever)
     })
   `, {
-    plugins: [ plugin ]
+    plugins: [plugin]
   }).code
 
   t.equal(src, dedent`
