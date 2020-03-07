@@ -12,7 +12,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "dedent": "^0.7.0",
-    "standard": "^10.0.3",
+    "standard": "^14.3.1",
     "tape": "^4.8.0"
   },
   "homepage": "https://github.com/goto-bus-stop/babel-plugin-dynamic-import-split-require",
