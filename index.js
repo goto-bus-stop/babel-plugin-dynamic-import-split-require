@@ -3,6 +3,10 @@ module.exports = function (babel) {
     require('split-require')
   `)
 
+  var makeDefaultWrapper = babel.template(`
+    IMPORT.then(HELPER)
+  `)
+
   return {
     inherits: require('babel-plugin-syntax-dynamic-import'),
 
@@ -25,6 +29,10 @@ module.exports = function (babel) {
         if (path.get('callee').isImport()) {
           this.usesImport = true
           path.get('callee').replaceWith(this.helperId)
+          path.replaceWith(makeDefaultWrapper({
+            IMPORT: path.node,
+            HELPER: this.file.addHelper('interopRequireDefault')
+          }))
         }
       }
     }
